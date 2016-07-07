@@ -7,10 +7,10 @@ from birthdaymessager.utils import bday_email
 logger = get_task_logger(__name__)
 
 @periodic_task(
-  run_every=(crontab(minute='*15')),
+  run_every=(crontab(minute='*5')),
   name="task_bday_email",
   ignore_result=True
   )
 def task_bday_email():
   bday_email()
-  logger.info("Saved image from Flickr")
+  logger.info("Sent Email")
